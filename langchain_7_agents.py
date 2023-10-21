@@ -78,6 +78,19 @@ import langchain
 
 def test_python_debug() -> None:
   langchain.debug=True
+  agent = create_python_agent(
+    llm,
+    tool=PythonREPLTool(),
+    verbose=True
+  )
+  customer_list = [["Harrison", "Chase"],
+          ["Lang", "Chain"],
+          ["Dolly", "Too"],
+          ["Elle", "Elem"],
+          ["Geoff","Fusion"],
+          ["Trance","Former"],
+          ["Jen","Ayai"]
+          ]
   result = agent.run(f"""Sort these customers by \
   last name and then first name \
   and print the output: {customer_list}""")
