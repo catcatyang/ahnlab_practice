@@ -146,7 +146,7 @@ def input_select(menu: dict) -> (int, str):
 
   if items == None or len(items) == 0:
      raise ValueError("menu에 items가 없습니다.")
-  for idx, item in items:
+  for idx, item in enumerate(items):
     print(f"{str(idx+1)}. {item}")
 
   size = len(items)
