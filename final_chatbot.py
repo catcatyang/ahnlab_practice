@@ -1,7 +1,7 @@
-#챗봇 제작 개요 : 양선영
-#1.서비스 선택 : 1.프리랜서 가이드라인(출판본).pdf
-#             2.OutdoorClothingCatalog_1000.csv
-#2.선택된 DB에 맞춰 서비스 제공
+# 챗봇 제작 개요 : 양선영
+# 1.서비스 선택 : 1.프리랜서 가이드라인(출판본).pdf
+#              2.OutdoorClothingCatalog_1000.csv
+# 2.선택된 DB에 맞춰 서비스 제공
 
 #!/usr/bin/env python
 # coding: utf-8
