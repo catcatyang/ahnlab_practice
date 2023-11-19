@@ -247,7 +247,7 @@ import threading
 
 
 class BusyIndicator:
-  def __init__(self, print_time = False):
+  def __init__(self, print_time = False, msg = ''):
     """
     BusyIndicator 클래스의 생성자입니다.
 
@@ -258,6 +258,7 @@ class BusyIndicator:
     self.busy_thread.daemon = True  # 백그라운드 스레드를 데몬으로 설정하여 메인 프로그램 종료 시 함께 종료됨
     self.start_time = time.time()
     self.print_time = print_time
+    self.msg = msg
 
   def run(self):
     """
@@ -267,7 +268,7 @@ class BusyIndicator:
       time_str = ''
       for char in "-\|/":
         if self.print_time:
-          time_str = str(round(time.time() - self.start_time, 2)) + ' '
+          time_str = self.msg + str(round(time.time() - self.start_time, 2)) + ' '
         sys.stdout.write(time_str + char )
         sys.stdout.flush()
         time.sleep(0.2)  # 문자가 변경되는 간격 (초 단위)
@@ -283,8 +284,8 @@ class BusyIndicator:
     self.busy_thread.start()  # 백그라운드 스레드 시작
 
   @classmethod
-  def busy(cls, print_time = False):
-    indicator = cls(print_time)
+  def busy(cls, print_time = False, msg = ''):
+    indicator = cls(print_time, msg)
     indicator.start()
     return indicator
 
