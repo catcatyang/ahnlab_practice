@@ -3,7 +3,34 @@
 #             2.OutdoorClothingCatalog_1000.csv
 #2.선택된 DB에 맞춰 서비스 제공
 
+"""
+파이썬으로 백엔드 서버 프로그램을 만드는 중.
 
+각각 uri 별로 request 값과 result 값이 아래와 같은 서버 프로그램 코드를 작성하고  스웨거를 적용시켜줘.
+flask-restx 를 사용 할 것
+
+/new_token
+
+request : {
+  db : integer
+}
+result : {
+  token: string
+}
+
+
+/prompt
+
+request : {
+  token: string
+  prompt: string
+}
+
+result : {
+  result: string
+}
+
+"""
 
 import os
 import json
